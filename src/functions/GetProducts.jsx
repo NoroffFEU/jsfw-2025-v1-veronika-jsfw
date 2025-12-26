@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ProductsUrl } from "../api";
+
+console.log("ProductsUrl:", ProductsUrl);
 
 function GetProducts() {
   const [products, setProducts] = useState([]);
@@ -13,18 +15,18 @@ function GetProducts() {
       try {
         // Reset the error state in case there as an error previously
         setIsError(false);
-        // Turn on the loading state each time we do an API call
-        setIsLoading(true);
         const response = await fetch(ProductsUrl);
         const json = await response.json();
-        setProducts(json);
-        // Clear the loading state once we've successfully got our data
-        setIsLoading(false);
+        console.log("API response:", json);
+
+        setProducts(json.data);
       } catch (error) {
         // Clear the loading state if we get an error and then
         // set our error state to true
-        setIsLoading(false);
+        console.error(error);
         setIsError(true);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -39,13 +41,15 @@ function GetProducts() {
     return <div>Error loading data</div>;
   }
 
+  if (!products.length) return <p>No products found</p>;
+
   return (
     <div>
-      {products.map((products) => (
-        <div>
-          <h2>{products.title}</h2>
-          <img src={products.image} alt={products.alt} />
-          <p>{products.price}</p>
+      {products.map((product) => (
+        <div key={product.id}>
+          <h2>{product.title}</h2>
+          <img src={product.image.url} alt={product.image.alt} width={200} />
+          <p>{product.price}</p>
         </div>
       ))}
     </div>
