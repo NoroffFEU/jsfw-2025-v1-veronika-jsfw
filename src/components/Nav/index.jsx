@@ -20,13 +20,13 @@ function Nav() {
       <div>
         <ul>
           <li>
-            <Link>Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link>Products</Link>
+            <Link to="/products">Products</Link>
           </li>
           <li>
-            <Link>Contact us</Link>
+            <Link to="/contact">Contact us</Link>
           </li>
         </ul>
       </div>
