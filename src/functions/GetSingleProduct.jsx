@@ -8,7 +8,7 @@ function GetSingleProduct() {
 
   useEffect(() => {
     async function fetchProduct() {
-      const response = await fetch(SingleProductUrl(id), {});
+      const response = await fetch(SingleProductUrl(id));
 
       const json = await response.json();
       setProduct(json.data);

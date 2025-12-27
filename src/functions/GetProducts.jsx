@@ -13,7 +13,9 @@ function GetProducts() {
     async function getData() {
       try {
         setIsError(false);
-        const response = await fetch(ProductsUrl);
+        setIsLoading(true);
+
+        const response = await fetch(ProductsUrl());
         const json = await response.json();
         console.log("API response:", json);
 
