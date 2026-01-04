@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ProductsUrl } from "../api";
 import ProductCard from "../components/ProductCard";
+import styles from "./GetProducts.module.css";
 
 console.log("ProductsUrl:", ProductsUrl);
 
@@ -42,7 +43,7 @@ function GetProducts() {
   if (!products.length) return <p>No products found</p>;
 
   return (
-    <div>
+    <div className={styles.grid}>
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
