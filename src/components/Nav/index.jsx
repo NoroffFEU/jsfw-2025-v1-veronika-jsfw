@@ -23,15 +23,12 @@ function Nav() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/products">Products</Link>
-          </li>
-          <li>
             <Link to="/contact">Contact us</Link>
           </li>
         </ul>
       </div>
       <div>
-        <Link>
+        <Link to="/checkout">
           <FontAwesomeIcon icon={faBasketShopping} />
         </Link>
       </div>

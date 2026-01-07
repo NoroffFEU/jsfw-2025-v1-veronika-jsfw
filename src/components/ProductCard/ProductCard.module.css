@@ -2,8 +2,8 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #e63946;
-  color: #ffffff;
+  background: var(--color-success);
+  color: var(--color-surface);
   font-size: 0.85rem;
   font-weight: 700;
   padding: 0.3rem 0.6rem;
@@ -13,7 +13,7 @@
 
 .card {
   position: relative;
-  background: #ffffff;
+  background: var(--color-surface);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
@@ -46,12 +46,6 @@
   margin: 0;
 }
 
-.price {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #2c7be5;
-}
-
 .prices {
   display: flex;
   align-items: center;
@@ -61,12 +55,12 @@
 .discounted {
   font-size: 1rem;
   font-weight: 700;
-  color: #2c7be5;
+  color: var(--color-primary);
 }
 
 .original {
   font-size: 0.9rem;
-  color: #6c757d;
+  color: var(--color-text-muted);
   text-decoration: line-through;
 }
 
@@ -74,8 +68,8 @@
   margin-top: auto;
   text-align: center;
   padding: 0.6rem 1rem;
-  background: #2c7be5;
-  color: #ffffff;
+  background: var(--color-accent);
+  color: var(--color-text-main);
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
@@ -83,5 +77,5 @@
 }
 
 .button:hover {
-  background: #1a5fc1;
+  background: var(--color-accent-hover);
 }
