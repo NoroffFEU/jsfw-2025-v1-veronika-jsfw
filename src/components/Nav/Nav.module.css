@@ -1,0 +1,97 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+
+/* Desktop menu */
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--color-text-main);
+  font-weight: 500;
+}
+
+.menu a:hover {
+  color: var(--color-primary);
+}
+
+/* Icons */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart {
+  font-size: 1.25rem;
+  color: var(--color-text-main);
+}
+
+.cart:hover {
+  color: var(--color-accent);
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* Mobile menu */
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-surface);
+  list-style: none;
+  padding: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.mobileMenu li {
+  margin-bottom: 1rem;
+}
+
+.mobileMenu a {
+  text-decoration: none;
+  color: var(--color-text-main);
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .menu {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+  }
+}

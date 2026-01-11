@@ -2,36 +2,50 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBasketShopping } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Nav.module.css";
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <nav>
-      <div>
-        <button onClick={toggleMenu}>
+    <nav className={styles.nav}>
+      <Link to="/" className={styles.logo}>
+        Uni<span>Mart</span>
+      </Link>
+      <ul className={styles.menu}>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+      <div className={styles.icons}>
+        <Link to="/checkout" className={styles.cart}>
+          <FontAwesomeIcon icon={faBasketShopping} />
+        </Link>
+        <button
+          className={styles.menuButton}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
           <FontAwesomeIcon icon={faBars} />
         </button>
       </div>
-      <div>
-        <ul>
+      {isMenuOpen && (
+        <ul className={styles.mobileMenu}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={() => setIsMenuOpen(false)}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact us</Link>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+              Contact
+            </Link>
           </li>
         </ul>
-      </div>
-      <div>
-        <Link to="/checkout">
-          <FontAwesomeIcon icon={faBasketShopping} />
-        </Link>
-      </div>
+      )}
     </nav>
   );
 }
