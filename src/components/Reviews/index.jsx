@@ -1,18 +1,24 @@
+import styles from "./Reviews.module.css";
+
 function Reviews({ reviews }) {
   if (!reviews || reviews.length === 0) {
-    return <p>No reviews yet</p>;
+    return <p className={styles.empty}>No reviews for this product yet.</p>;
   }
 
   return (
-    <section>
-      <h3>Reviews</h3>
-      {reviews.map((review) => (
-        <div key={review.id}>
-          <strong>{review.username}</strong>
-          <p>Rating: {review.rating}</p>
-          <p>{review.description}</p>
-        </div>
-      ))}
+    <section className={styles.reviews}>
+      <h2 className={styles.heading}>Reviews</h2>
+      <div className={styles.list}>
+        {reviews.map((review) => (
+          <article key={review.id} className={styles.card}>
+            <div className={styles.header}>
+              <strong className={styles.user}>{review.username}</strong>
+              <span className={styles.rating}>⭐ {review.rating} / 5</span>
+            </div>
+            <p className={styles.text}>{review.description}</p>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }

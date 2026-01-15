@@ -1,0 +1,62 @@
+.reviews {
+  margin-top: 3rem;
+}
+
+.heading {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Review list */
+.list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Review card */
+.card {
+  background-color: var(--color-surface);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Header row */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.user {
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.rating {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+}
+
+/* Review text */
+.text {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Empty state */
+.empty {
+  margin-top: 2rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}

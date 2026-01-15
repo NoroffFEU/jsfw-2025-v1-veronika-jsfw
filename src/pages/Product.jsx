@@ -1,11 +1,12 @@
 import React from "react";
 import GetSingleProduct from "../functions/GetSingleProduct";
 import Reviews from "../components/Reviews";
+import styles from "./Product.module.css";
 
 function Product() {
   const product = GetSingleProduct();
 
-  if (!product) return <p>Loading product...</p>;
+  if (!product) return <p className={styles.loading}>Loading product...</p>;
 
   const { title, description, price, discountedPrice, image, reviews } =
     product;
@@ -16,28 +17,31 @@ function Product() {
     : 0;
 
   return (
-    <div>
-      <h1>{title}</h1>
+    <section className={styles.page}>
+      <div className={styles.card}>
+        <div className={styles.imageWrapper}>
+          {hasDiscount && (
+            <span className={styles.badge}>{discountAmount}% OFF</span>
+          )}
+          <img src={image.url} alt={image.alt} />
+        </div>
 
-      <img src={image.url} alt={image.alt} width={300} />
+        <div className={styles.details}>
+          <h1>{title}</h1>
+          <p className={styles.description}>{description}</p>
 
-      <p>{description}</p>
+          <div className={styles.pricing}>
+            <span className={styles.price}>${discountedPrice}</span>
 
-      <p>
-        Price: <strong>{discountedPrice}</strong>
-      </p>
+            {hasDiscount && <span className={styles.oldPrice}>${price}</span>}
+          </div>
 
-      {hasDiscount && (
-        <p>
-          <span style={{ textDecoration: "line-through" }}>{price}</span> (
-          {discountAmount}% off)
-        </p>
-      )}
-
-      <button>Add to cart</button>
+          <button className={styles.button}>Add to cart</button>
+        </div>
+      </div>
 
       <Reviews reviews={reviews} />
-    </div>
+    </section>
   );
 }
 
