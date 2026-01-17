@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Nav.module.css";
+import { useCart } from "../../context/CartContext";
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { cart } = useCart();
 
   return (
     <nav className={styles.nav}>
@@ -23,6 +25,9 @@ function Nav() {
       <div className={styles.icons}>
         <Link to="/checkout" className={styles.cart}>
           <FontAwesomeIcon icon={faBasketShopping} />
+          {cart.length > 0 && (
+            <span className={styles.cartCount}>{cart.length}</span>
+          )}
         </Link>
         <button
           className={styles.menuButton}

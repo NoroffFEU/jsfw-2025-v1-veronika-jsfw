@@ -2,9 +2,14 @@ import React from "react";
 import GetSingleProduct from "../functions/GetSingleProduct";
 import Reviews from "../components/Reviews";
 import styles from "./Product.module.css";
+import { useCart } from "../context/CartContext";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Product() {
   const product = GetSingleProduct();
+  const { addToCart } = useCart();
+  const [showConfirm, setShowConfirm] = useState(false);
 
   if (!product) return <p className={styles.loading}>Loading product...</p>;
 
@@ -15,6 +20,11 @@ function Product() {
   const discountAmount = hasDiscount
     ? Math.round(((price - discountedPrice) / price) * 100)
     : 0;
+
+  function handleAddToCart() {
+    addToCart(product);
+    setShowConfirm(true);
+  }
 
   return (
     <section className={styles.page}>
@@ -36,9 +46,23 @@ function Product() {
             {hasDiscount && <span className={styles.oldPrice}>${price}</span>}
           </div>
 
-          <button className={styles.button}>Add to cart</button>
+          <button className={styles.button} onClick={handleAddToCart}>
+            Add to cart
+          </button>
         </div>
       </div>
+
+      {showConfirm && (
+        <div className={styles.confirm}>
+          <p>Product added to cart!</p>
+          <div>
+            <Link to="/checkout">Go to checkout</Link>
+            <button onClick={() => setShowConfirm(false)}>
+              <Link to="/">Continue shopping </Link>
+            </button>
+          </div>
+        </div>
+      )}
 
       <Reviews reviews={reviews} />
     </section>

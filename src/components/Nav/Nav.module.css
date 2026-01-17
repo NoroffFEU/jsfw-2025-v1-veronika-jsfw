@@ -51,6 +51,19 @@
 .cart {
   font-size: 1.25rem;
   color: var(--color-text-main);
+  position: relative;
+}
+
+.cartCount {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
 }
 
 .cart:hover {
