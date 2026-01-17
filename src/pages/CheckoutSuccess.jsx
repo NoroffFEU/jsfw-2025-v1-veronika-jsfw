@@ -8,7 +8,7 @@ function CheckoutSuccess() {
 
   useEffect(() => {
     clearCart();
-  }, [clearCart]);
+  }, []);
 
   return (
     <section className={styles.page}>
@@ -17,11 +17,9 @@ function CheckoutSuccess() {
         Your purchase was placed successfully. You will find it at your address
         in less than five days.
       </p>
-      <button>
-        <Link to="/" className={styles.button}>
-          Shop more
-        </Link>
-      </button>
+      <Link to="/" className={styles.button}>
+        Shop more
+      </Link>
     </section>
   );
 }
