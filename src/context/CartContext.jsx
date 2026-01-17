@@ -9,14 +9,21 @@ export function CartProvider({ children }) {
     setCart((prev) => [...prev, product]);
   }
 
+  function removeFromCart(id) {
+    setCart((prev) => prev.filter((item) => item.id !== id));
+  }
+
   function clearCart() {
     setCart([]);
   }
 
+  const cartCount = cart.length;
   const total = cart.reduce((sum, item) => sum + item.discountedPrice, 0);
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, clearCart, total }}>
+    <CartContext.Provider
+      value={{ cart, cartCount, addToCart, removeFromCart, clearCart, total }}
+    >
       {children}
     </CartContext.Provider>
   );

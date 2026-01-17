@@ -1,12 +1,21 @@
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Checkout.module.css";
 
 function Checkout() {
-  const { cart, total } = useCart();
+  const { cart, total, removeFromCart } = useCart();
 
   if (cart.length === 0) {
-    return <p className={styles.empty}>Your cart is empty</p>;
+    return (
+      <div className={styles.page}>
+        <p>Your cart is empty</p>
+        <Link to="/" className={styles.button}>
+          Find some products
+        </Link>
+      </div>
+    );
   }
 
   return (
@@ -18,9 +27,16 @@ function Checkout() {
           <li key={index} className={styles.item}>
             <img src={item.image.url} alt={item.image.alt} />
             <div>
-              <h3>{item.title}</h3>
+              <h2>{item.title}</h2>
               <p>${item.discountedPrice}</p>
             </div>
+            <button
+              className={styles.remove}
+              onClick={() => removeFromCart(item.id)}
+              aria-label="Remove product"
+            >
+              <FontAwesomeIcon icon={faTrashCan} />
+            </button>
           </li>
         ))}
       </ul>
