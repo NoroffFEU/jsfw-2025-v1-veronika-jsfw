@@ -31,7 +31,7 @@ function Product() {
       <div className={styles.card}>
         <div className={styles.imageWrapper}>
           {hasDiscount && (
-            <span className={styles.badge}>{discountAmount}% OFF</span>
+            <span className={styles.badge}>-{discountAmount}%</span>
           )}
           <img src={image.url} alt={image.alt} />
         </div>
