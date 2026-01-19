@@ -5,6 +5,7 @@ import styles from "./Product.module.css";
 import { useCart } from "../context/CartContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import buttonStyles from "../styles/buttons.module.css";
 
 function Product() {
   const product = GetSingleProduct();
@@ -46,7 +47,7 @@ function Product() {
             {hasDiscount && <span className={styles.oldPrice}>${price}</span>}
           </div>
 
-          <button className={styles.button} onClick={handleAddToCart}>
+          <button className={buttonStyles.primary} onClick={handleAddToCart}>
             Add to cart
           </button>
         </div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
+import buttonStyles from "../../styles/buttons.module.css";
 
 function ProductCard({ product }) {
   const { price, discountedPrice } = product;
@@ -28,7 +29,7 @@ function ProductCard({ product }) {
           {hasDiscount && <span className={styles.original}>{price}</span>}
         </div>
 
-        <Link to={`/product/${product.id}`} className={styles.button}>
+        <Link to={`/product/${product.id}`} className={buttonStyles.primary}>
           View product
         </Link>
       </div>

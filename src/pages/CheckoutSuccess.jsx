@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import styles from "./CheckoutSuccess.module.css";
+import buttonStyles from "../styles/buttons.module.css";
 
 function CheckoutSuccess() {
   const { clearCart } = useCart();
@@ -17,7 +18,7 @@ function CheckoutSuccess() {
         Your purchase was placed successfully. You will find it at your address
         in less than five days.
       </p>
-      <Link to="/" className={styles.button}>
+      <Link to="/" className={buttonStyles.primary}>
         Shop more
       </Link>
     </section>

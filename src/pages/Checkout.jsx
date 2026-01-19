@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Checkout.module.css";
+import buttonStyles from "../styles/buttons.module.css";
 
 function Checkout() {
   const { cart, total, removeFromCart } = useCart();
@@ -11,7 +12,7 @@ function Checkout() {
     return (
       <div className={styles.page}>
         <p>Your cart is empty</p>
-        <Link to="/" className={styles.button}>
+        <Link to="/" className={buttonStyles.primary}>
           Find some products
         </Link>
       </div>
@@ -45,7 +46,7 @@ function Checkout() {
         <strong>Total:</strong> ${total.toFixed(2)}
       </div>
 
-      <Link to="/checkout-success" className={styles.button}>
+      <Link to="/checkout-success" className={buttonStyles.primary}>
         Checkout
       </Link>
     </section>

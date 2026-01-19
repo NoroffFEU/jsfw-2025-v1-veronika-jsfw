@@ -4,6 +4,7 @@ import { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import styles from "./Form.module.css";
+import buttonStyles from "../../styles/buttons.module.css";
 
 const schema = yup
   .object({
@@ -48,7 +49,7 @@ function Form() {
         <h2>Thank you for contacting us</h2>
         <p>We will be in touch as soon as possible.</p>
         <button
-          className={styles.button}
+          className={buttonStyles.primary}
           onClick={() => {
             reset();
             setSubmitted(false);
@@ -82,7 +83,7 @@ function Form() {
         <textarea rows="4" {...register("message")} />
         <span className={styles.error}>{errors.message?.message}</span>
       </div>
-      <button type="submit" className={styles.button}>
+      <button type="submit" className={buttonStyles.primary}>
         Submit
       </button>
     </form>
