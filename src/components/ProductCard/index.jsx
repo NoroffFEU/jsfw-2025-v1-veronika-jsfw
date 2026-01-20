@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import styles from "./ProductCard.module.css";
 import buttonStyles from "../../styles/buttons.module.css";
+import cardStyles from "../../styles/cards.module.css";
+import styles from "./ProductCard.module.css";
 
 function ProductCard({ product }) {
   const { price, discountedPrice } = product;
@@ -11,7 +12,7 @@ function ProductCard({ product }) {
     : 0;
 
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${cardStyles.card}`}>
       {hasDiscount && <span className={styles.badge}>-{discountPercent}%</span>}
 
       <img

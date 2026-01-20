@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import styles from "./Form.module.css";
 import buttonStyles from "../../styles/buttons.module.css";
+import cardStyles from "../../styles/cards.module.css";
 
 const schema = yup
   .object({
@@ -62,7 +63,10 @@ function Form() {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={`${cardStyles.card} ${styles.form}`}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <div className={styles.field}>
         <label>Name</label>
         <input {...register("fullName")} />

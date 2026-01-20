@@ -13,10 +13,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  background-color: var(--color-surface);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Image */
@@ -58,7 +54,7 @@
 }
 
 .description {
-  color: var(--color-text-muted);
+  color: var(--color-text-main);
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }

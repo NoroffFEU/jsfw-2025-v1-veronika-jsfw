@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Checkout.module.css";
 import buttonStyles from "../styles/buttons.module.css";
+import cardStyles from "../styles/cards.module.css";
 
 function Checkout() {
   const { cart, total, removeFromCart } = useCart();
@@ -25,7 +26,7 @@ function Checkout() {
 
       <ul className={styles.list}>
         {cart.map((item, index) => (
-          <li key={index} className={styles.item}>
+          <li key={index} className={`${styles.item} ${cardStyles.card}`}>
             <img src={item.image.url} alt={item.image.alt} />
             <div>
               <h2>{item.title}</h2>

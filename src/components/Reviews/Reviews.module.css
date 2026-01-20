@@ -13,14 +13,6 @@
   gap: 1.25rem;
 }
 
-/* Review card */
-.card {
-  background-color: var(--color-surface);
-  padding: 1.25rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-}
-
 /* Header row */
 .header {
   display: flex;

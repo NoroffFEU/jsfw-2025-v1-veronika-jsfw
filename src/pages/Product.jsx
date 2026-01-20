@@ -6,6 +6,7 @@ import { useCart } from "../context/CartContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import buttonStyles from "../styles/buttons.module.css";
+import cardStyles from "../styles/cards.module.css";
 
 function Product() {
   const product = GetSingleProduct();
@@ -29,7 +30,7 @@ function Product() {
 
   return (
     <section className={styles.page}>
-      <div className={styles.card}>
+      <div className={`${cardStyles.card} ${styles.card}`}>
         <div className={styles.imageWrapper}>
           {hasDiscount && (
             <span className={styles.badge}>-{discountAmount}%</span>
