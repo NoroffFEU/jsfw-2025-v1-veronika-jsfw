@@ -100,11 +100,6 @@
   cursor: pointer;
 }
 
-/* Reviews */
-section + section {
-  margin-top: 2rem;
-}
-
 /* Responsive */
 @media (max-width: 600px) {
   .card {
