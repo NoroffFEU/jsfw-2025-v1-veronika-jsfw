@@ -5,13 +5,14 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Checkout.module.css";
 import buttonStyles from "../styles/buttons.module.css";
 import cardStyles from "../styles/cards.module.css";
+import layoutStyles from "../styles/layout.module.css";
 
 function Checkout() {
   const { cart, total, removeFromCart } = useCart();
 
   if (cart.length === 0) {
     return (
-      <div className={styles.page}>
+      <div className={layoutStyles.page}>
         <p>Your cart is empty</p>
         <Link to="/" className={buttonStyles.primary}>
           Find some products
@@ -21,7 +22,7 @@ function Checkout() {
   }
 
   return (
-    <section className={styles.page}>
+    <section className={layoutStyles.page}>
       <h1>Checkout</h1>
 
       <ul className={styles.list}>

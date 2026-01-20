@@ -1,9 +1,3 @@
-.page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1.5rem;
-}
-
 .list {
   list-style: none;
   margin: 2rem 0;
@@ -39,4 +33,8 @@
 .total {
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
 }

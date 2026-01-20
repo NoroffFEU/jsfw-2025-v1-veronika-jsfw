@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import styles from "./CheckoutSuccess.module.css";
 import buttonStyles from "../styles/buttons.module.css";
+import layoutStyles from "../styles/layout.module.css";
 
 function CheckoutSuccess() {
   const { clearCart } = useCart();
@@ -12,7 +12,7 @@ function CheckoutSuccess() {
   }, []);
 
   return (
-    <section className={styles.page}>
+    <section className={`${layoutStyles.narrow} ${layoutStyles.page}`}>
       <h1>Purchase completed!</h1>
       <p>
         Your purchase was placed successfully. You will find it at your address
