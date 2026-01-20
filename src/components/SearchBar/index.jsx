@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SearchBar.module.css";
+import inputStyles from "../../styles/inputs.module.css";
 
 function SearchBar({ products }) {
   const [query, setQuery] = useState("");
@@ -25,7 +26,7 @@ function SearchBar({ products }) {
         placeholder="Search products..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className={styles.input}
+        className={`${inputStyles.input} ${styles.input}`}
         aria-label="Search products"
       />
 

@@ -6,6 +6,7 @@ import * as yup from "yup";
 import styles from "./Form.module.css";
 import buttonStyles from "../../styles/buttons.module.css";
 import cardStyles from "../../styles/cards.module.css";
+import inputStyles from "../../styles/inputs.module.css";
 
 const schema = yup
   .object({
@@ -46,7 +47,7 @@ function Form() {
 
   if (submitted) {
     return (
-      <div className={styles.success}>
+      <div className={`${styles.success} ${cardStyles.card}`}>
         <h2>Thank you for contacting us</h2>
         <p>We will be in touch as soon as possible.</p>
         <button
@@ -67,25 +68,29 @@ function Form() {
       className={`${cardStyles.card} ${styles.form}`}
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className={styles.field}>
-        <label>Name</label>
-        <input {...register("fullName")} />
-        <span className={styles.error}>{errors.fullName?.message}</span>
+      <div className={inputStyles.field}>
+        <label className={inputStyles.label}>Name</label>
+        <input className={inputStyles.input} {...register("fullName")} />
+        <span className={inputStyles.error}>{errors.fullName?.message}</span>
       </div>
-      <div className={styles.field}>
-        <label>Email </label>
-        <input {...register("email")} />
-        <span className={styles.error}>{errors.email?.message}</span>
+      <div className={inputStyles.field}>
+        <label className={inputStyles.label}>Email </label>
+        <input className={inputStyles.input} {...register("email")} />
+        <span className={inputStyles.error}>{errors.email?.message}</span>
       </div>
-      <div className={styles.field}>
-        <label>Subject</label>
-        <input {...register("subject")} />
-        <span className={styles.error}>{errors.subject?.message}</span>
+      <div className={inputStyles.field}>
+        <label className={inputStyles.label}>Subject</label>
+        <input className={inputStyles.input} {...register("subject")} />
+        <span className={inputStyles.error}>{errors.subject?.message}</span>
       </div>
-      <div className={styles.field}>
-        <label>Message</label>
-        <textarea rows="4" {...register("message")} />
-        <span className={styles.error}>{errors.message?.message}</span>
+      <div className={inputStyles.field}>
+        <label className={inputStyles.label}>Message</label>
+        <textarea
+          className={inputStyles.input}
+          rows="4"
+          {...register("message")}
+        />
+        <span className={inputStyles.error}>{errors.message?.message}</span>
       </div>
       <button type="submit" className={buttonStyles.primary}>
         Submit
