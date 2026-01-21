@@ -4,10 +4,10 @@
   --color-bg: #dfe0e2;
   --color-surface: #ffffff;
   --color-text-main: #111827;
-  --color-text-muted: #6b7280;
+  --color-text-muted: #545964;
   --color-success: #16a34a;
   --color-accent-hover: #e39308;
-  --color-error: #dc2626;
+  --color-error: #ab1c1c;
 }
 
 * {
