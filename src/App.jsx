@@ -5,6 +5,7 @@ import Product from "./pages/Product";
 import Contact from "./pages/Contact";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
 import Checkout from "./pages/Checkout";
+import RouteNotFound from "./pages/RouteNotFound";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/checkout-success" element={<CheckoutSuccess />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="*" element={<RouteNotFound />} />
         </Route>
       </Routes>
     </div>
