@@ -9,7 +9,7 @@ function CheckoutSuccess() {
 
   useEffect(() => {
     clearCart();
-  }, []);
+  }, [clearCart]);
 
   return (
     <section className={`${layoutStyles.narrow} ${layoutStyles.page}`}>

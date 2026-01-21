@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useCallback } from "react";
 
 const CartContext = createContext();
 
@@ -13,9 +13,9 @@ export function CartProvider({ children }) {
     setCart((prev) => prev.filter((item) => item.id !== id));
   }
 
-  function clearCart() {
+  const clearCart = useCallback(() => {
     setCart([]);
-  }
+  }, []);
 
   const cartCount = cart.length;
   const total = cart.reduce((sum, item) => sum + item.discountedPrice, 0);
