@@ -4,8 +4,6 @@ import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
 import styles from "./GetProducts.module.css";
 
-console.log("ProductsUrl:", ProductsUrl);
-
 function GetProducts() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +17,6 @@ function GetProducts() {
 
         const response = await fetch(ProductsUrl());
         const json = await response.json();
-        console.log("API response:", json);
 
         setProducts(json.data);
       } catch (error) {
