@@ -7,7 +7,6 @@ import { useCart } from "../../context/CartContext";
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { cart } = useCart();
   const { cartCount } = useCart();
 
   return (
