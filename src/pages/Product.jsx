@@ -59,7 +59,9 @@ function Product() {
         <div className={styles.confirm}>
           <p>Product added to cart!</p>
           <div>
-            <Link to="/checkout">Go to checkout</Link>
+            <button>
+              <Link to="/checkout">Go to checkout</Link>
+            </button>
             <button onClick={() => setShowConfirm(false)}>
               <Link to="/">Continue shopping </Link>
             </button>
