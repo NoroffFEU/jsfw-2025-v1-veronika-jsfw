@@ -1,49 +1,71 @@
-# JavaScript Frameworks - UniMart
+# UniMart
 
-This project is a Course Assignment for JavaScript Frameworks as part of studying Front-end Development at Noroff.
+![UniMart Screenshot](./img/screenshot.jpg)
 
-UniMart is a React-based e-commerce web application.  
-The app allows users to browse products, view product details, manage a shopping cart, and complete a checkout flow, in addition to use a contact form.
+A modern e-commerce web application where users can browse products, manage a shopping cart, and complete a checkout process.
 
-## Features
+## Description
+
+UniMart is a Course Assignment for JavaScript Frameworks as part of the Front-end Development studies at Noroff.
+
+The project is a React-based online store that allows users to browse products, view detailed product information, add items to a shopping cart, and complete a checkout flow.
+
+The application includes:
 
 - Product listing and product detail pages
 - Discount badge for discounted products
-- Add and remove products from cart
+- Add and remove products from the shopping cart
 - Cart count displayed in the navigation bar
 - Checkout flow with success confirmation
-- Cart is cleared after successful checkout
-- Contact form with validation and success message
-- Responsive design (mobile, tablet, desktop)
-- Error handling with a "Route Not Found" page
+- Automatic cart clearing after successful checkout
+- Contact form with validation
+- Responsive design for mobile, tablet and desktop.
+- Custom "Route Not Found" error page
 
-# Getting Started with Create React App
+## Built With
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- React (Create React App)
+- JavaScript
+- CSS
+- React Router
+- Noroff API v2
 
-## Available Scripts
+## Hosted Site
 
-In the project directory, you can run:
+[Live Demo](https://jsfw-veronika.netlify.app/)
 
-### `npm start`
+## Getting started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installing
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+```bash
+git clone git@github.com:NoroffFEU/jsfw-2025-v1-veronika-jsfw.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install the dependencies:
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Running
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run the application locally:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
+
+### Build for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+## Contact
+
+[My LinkedIn profile](https://www.linkedin.com/in/veronika-reinhaug/)
